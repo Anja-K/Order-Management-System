@@ -102,7 +102,7 @@
     
     //Orders
     class Orders extends DB{
-		public $customer;
+	public $customer;
         public $totalamount;
         public $totaldiscount;
         public $paidamount;
@@ -114,12 +114,12 @@
         }
 
         public function update($id){
-			$query = "UPDATE {$this->table} SET ";
+		$query = "UPDATE {$this->table} SET ";
         	$query.= " customer = '{$this->customer}',";
         	$query.= " totalamount = '{$this->totalamount}',";
-        	$query.= " totaldiscount = '{$this->totaldiscount}',";
-            $query.= " paidamount = '{$this->paidamount}',";
-            $query.= " prize = '{$this->prize}'";
+                $query.= " totaldiscount = '{$this->totaldiscount}',";
+                $query.= " paidamount = '{$this->paidamount}',";
+                $query.= " prize = '{$this->prize}'";
         	$query.= " WHERE id = $id";
 
         	return $this->db->exec($query);
@@ -131,7 +131,7 @@
     }
 
     class OrderDetails extends DB{
-		public $orderid;
+	public $orderid;
         public $product;
         public $quantity;
         public $totalamount;
@@ -143,12 +143,11 @@
         }
 
         public function update($id){
-            //UPDATE order_management.customers SET type = 'Small Company' WHERE id = 2 AND type = 'Large Company';
-			$query = "UPDATE {$this->table} SET ";
+		$query = "UPDATE {$this->table} SET ";
         	$query.= " product = '{$this->product}',";
         	$query.= " quantity = '{$this->quantity}',";
-            $query.= " totalamount = '{$this->totalamount}',";
-            $query.= " totaldiscount = '{$this->totaldiscount}'";
+                $query.= " totalamount = '{$this->totalamount}',";
+                $query.= " totaldiscount = '{$this->totaldiscount}'";
         	$query.= " WHERE id = $id";
         	
         	return $this->db->exec($query);
